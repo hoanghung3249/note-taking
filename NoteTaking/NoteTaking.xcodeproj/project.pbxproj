@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */; };
 		0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4B327EEC973009EC224 /* NoteTakingApp.swift */; };
 		0E62F4B827EEC976009EC224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E62F4B727EEC976009EC224 /* Assets.xcassets */; };
 		0E62F4BB27EEC976009EC224 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E62F4BA27EEC976009EC224 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
 		0E62F4B027EEC973009EC224 /* NoteTaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E62F4B327EEC973009EC224 /* NoteTakingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakingApp.swift; sourceTree = "<group>"; };
 		0E62F4B727EEC976009EC224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1FA39727EF1D5600372F34 /* AddNewNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */,
+			);
+			path = AddNewNoteView;
+			sourceTree = "<group>";
+		};
 		0E62F4A727EEC973009EC224 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		0E62F4C127EEC9F9009EC224 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E1FA39727EF1D5600372F34 /* AddNewNoteView */,
 				0E62F4D427EEE7C8009EC224 /* ChildViews */,
 				0E62F4C227EECA05009EC224 /* HomeView */,
 			);
@@ -229,6 +240,7 @@
 			files = (
 				0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */,
 				0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */,
+				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
 				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,
 				0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */,
 				0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */,

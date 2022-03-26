@@ -25,7 +25,7 @@ struct GroupNoteModel: Codable, Identifiable {
     var numberOfNote: Int
     var dateAdded: Date
     var groupNoteType: GroupNoteType
-    
+    var notes = [NoteModel]()
 }
 
 let mockingGroupNotes = [

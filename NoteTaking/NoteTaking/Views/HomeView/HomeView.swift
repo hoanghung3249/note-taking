@@ -12,33 +12,35 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
-        ZStack {
-            Color.white.ignoresSafeArea()
-            VStack {
-                headerView()
-                Spacer()
-                bodyView()
-                if viewModel.groupNotes.isEmpty {
+        NavigationView {
+            ZStack {
+                Color.white.ignoresSafeArea()
+                VStack {
+                    headerView()
                     Spacer()
-                }
-            }
-            .frame(maxHeight: .infinity, alignment: .center)
-            
-            VStack {
-                HStack {
-                    Button(action: {}) {
-                        Image("plus")
-                            .resizable()
-                            .frame(width: 70, height: 70, alignment: .center)
-                            .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
+                    bodyView()
+                    if viewModel.groupNotes.isEmpty {
+                        Spacer()
                     }
-                    
+                }
+                .frame(maxHeight: .infinity, alignment: .center)
+                
+                VStack {
+                    HStack {
+                        NavigationLink(destination: AddNewNoteView()) {
+                            Image("plus")
+                                .resizable()
+                                .frame(width: 70, height: 70, alignment: .center)
+                                .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 .padding(.horizontal)
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
-            .padding(.horizontal)
-            .frame(maxHeight: .infinity, alignment: .bottom)
+            .navigationBarHidden(true)
         }
         .onAppear {
             viewModel.fetchGroupNote()

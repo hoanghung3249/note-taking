@@ -7,9 +7,8 @@
 
 import Foundation
 
-
-
-struct NoteModel {
+struct NoteModel: Codable {
+    var title: String
     var noteDetail: String
     var dateAdded: Date
 }
