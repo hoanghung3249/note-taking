@@ -13,28 +13,35 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            Color.whiteLilac.ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             VStack {
                 headerView()
                 Spacer()
-//                emptyMessageView()
-                listNotes()
-                    .padding(.vertical)
-                Spacer()
-                
+                bodyView()
+                if viewModel.groupNotes.isEmpty {
+                    Spacer()
+                }
+            }
+            .frame(maxHeight: .infinity, alignment: .center)
+            
+            VStack {
                 HStack {
                     Button(action: {}) {
                         Image("plus")
                             .resizable()
-                            .frame(width: 75, height: 75, alignment: .center)
-                            .shadow(color: Color.royalBlue, radius: 3.5, x: 0, y: 1)
+                            .frame(width: 70, height: 70, alignment: .center)
+                            .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
                     }
                     
                 }
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .frame(maxHeight: .infinity, alignment: .center)
+            .padding(.horizontal)
+            .frame(maxHeight: .infinity, alignment: .bottom)
+        }
+        .onAppear {
+            viewModel.fetchGroupNote()
         }
     }
     
@@ -84,6 +91,15 @@ struct HomeView: View {
             }
         }
         .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    func bodyView() -> some View {
+        if !viewModel.groupNotes.isEmpty {
+            listNotes()
+        } else {
+            emptyMessageView()
+        }
     }
 }
 

@@ -35,7 +35,8 @@ let mockingGroupNotes = [
     GroupNoteModel(name: "To Do List", numberOfNote: 6, dateAdded: Date(), groupNoteType: .list),
     GroupNoteModel(name: "Groceries", numberOfNote: 6, dateAdded: Date(), groupNoteType: .list),
     GroupNoteModel(name: "Quotes", numberOfNote: 10, dateAdded: Date(), groupNoteType: .list),
-    GroupNoteModel(name: "Books", numberOfNote: 7, dateAdded: Date(), groupNoteType: .folder)
+    GroupNoteModel(name: "Books", numberOfNote: 7, dateAdded: Date(), groupNoteType: .folder),
+    GroupNoteModel(name: "Task", numberOfNote: 7, dateAdded: Date(), groupNoteType: .folder)
 ]
 
 

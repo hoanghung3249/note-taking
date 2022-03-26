@@ -33,7 +33,7 @@ struct GroupNoteView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 5)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.whiteLilac.opacity(0.3))
         )
     }
 }

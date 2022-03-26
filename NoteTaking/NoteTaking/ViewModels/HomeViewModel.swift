@@ -9,6 +9,11 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published var groupNotes = mockingGroupNotes
+    @Published var groupNotes = [GroupNoteModel]()
     
+    func fetchGroupNote() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.groupNotes = mockingGroupNotes
+        }
+    }
 }
