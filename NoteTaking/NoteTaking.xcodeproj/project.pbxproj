@@ -13,6 +13,10 @@
 		0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4C327EECA0F009EC224 /* HomeView.swift */; };
 		0E62F4C727EECEC8009EC224 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4C627EECEC8009EC224 /* Colors.swift */; };
 		0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4C927EED0FB009EC224 /* ColorExtension.swift */; };
+		0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4CD27EEDA7F009EC224 /* GroupNoteModel.swift */; };
+		0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4CF27EEDB14009EC224 /* NoteModel.swift */; };
+		0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */; };
+		0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		0E62F4C327EECA0F009EC224 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0E62F4C627EECEC8009EC224 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0E62F4C927EED0FB009EC224 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		0E62F4CD27EEDA7F009EC224 /* GroupNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNoteModel.swift; sourceTree = "<group>"; };
+		0E62F4CF27EEDB14009EC224 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,8 @@
 		0E62F4B227EEC973009EC224 /* NoteTaking */ = {
 			isa = PBXGroup;
 			children = (
+				0E62F4D127EEE0BF009EC224 /* ViewModels */,
+				0E62F4CB27EED832009EC224 /* Models */,
 				0E62F4C527EECEB8009EC224 /* Utils */,
 				0E62F4C127EEC9F9009EC224 /* Views */,
 				0E62F4B327EEC973009EC224 /* NoteTakingApp.swift */,
@@ -75,6 +85,7 @@
 		0E62F4C127EEC9F9009EC224 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E62F4D427EEE7C8009EC224 /* ChildViews */,
 				0E62F4C227EECA05009EC224 /* HomeView */,
 			);
 			path = Views;
@@ -103,6 +114,47 @@
 				0E62F4C927EED0FB009EC224 /* ColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0E62F4CB27EED832009EC224 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E62F4CC27EED97D009EC224 /* NoteModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E62F4CC27EED97D009EC224 /* NoteModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E62F4CD27EEDA7F009EC224 /* GroupNoteModel.swift */,
+				0E62F4CF27EEDB14009EC224 /* NoteModel.swift */,
+			);
+			path = NoteModel;
+			sourceTree = "<group>";
+		};
+		0E62F4D127EEE0BF009EC224 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0E62F4D427EEE7C8009EC224 /* ChildViews */ = {
+			isa = PBXGroup;
+			children = (
+				0E62F4D527EEE7D6009EC224 /* GroupNoteView */,
+			);
+			path = ChildViews;
+			sourceTree = "<group>";
+		};
+		0E62F4D527EEE7D6009EC224 /* GroupNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */,
+			);
+			path = GroupNoteView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */,
+				0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */,
+				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,
 				0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */,
+				0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */,
 				0E62F4C727EECEC8009EC224 /* Colors.swift in Sources */,
 				0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */,
 				0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */,
