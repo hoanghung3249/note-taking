@@ -23,6 +23,7 @@
 		0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */; };
 		0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */; };
 		0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */; };
+		0EA6EDDE28014B7C001C9676 /* VerticalIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNoteView.swift; sourceTree = "<group>"; };
 		0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteViewModel.swift; sourceTree = "<group>"; };
+		0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		0E46559F27F013390024059C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0EA6EDDC28014B6B001C9676 /* VerticalIndicatorView */,
 				0E4655A027F013410024059C /* TextView */,
 			);
 			path = Components;
@@ -214,6 +217,14 @@
 			path = HomeViewModel;
 			sourceTree = "<group>";
 		};
+		0EA6EDDC28014B6B001C9676 /* VerticalIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */,
+			);
+			path = VerticalIndicatorView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,6 +309,7 @@
 				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,
 				0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */,
 				0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */,
+				0EA6EDDE28014B7C001C9676 /* VerticalIndicatorView.swift in Sources */,
 				0E62F4C727EECEC8009EC224 /* Colors.swift in Sources */,
 				0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */,
 				0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */,
