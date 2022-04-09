@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */; };
+		0E4655A227F0136E0024059C /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4655A127F0136E0024059C /* TextInputView.swift */; };
+		0E4655A527F01F220024059C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E4655A427F01F220024059C /* IQKeyboardManagerSwift */; };
+		0E4655A727F02C0B0024059C /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */; };
 		0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4B327EEC973009EC224 /* NoteTakingApp.swift */; };
 		0E62F4B827EEC976009EC224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E62F4B727EEC976009EC224 /* Assets.xcassets */; };
 		0E62F4BB27EEC976009EC224 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E62F4BA27EEC976009EC224 /* Preview Assets.xcassets */; };
@@ -18,10 +21,13 @@
 		0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4CF27EEDB14009EC224 /* NoteModel.swift */; };
 		0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */; };
 		0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */; };
+		0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
+		0E4655A127F0136E0024059C /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
 		0E62F4B027EEC973009EC224 /* NoteTaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E62F4B327EEC973009EC224 /* NoteTakingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakingApp.swift; sourceTree = "<group>"; };
 		0E62F4B727EEC976009EC224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +39,7 @@
 		0E62F4CF27EEDB14009EC224 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNoteView.swift; sourceTree = "<group>"; };
+		0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4655A527F01F220024059C /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +60,22 @@
 				0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */,
 			);
 			path = AddNewNoteView;
+			sourceTree = "<group>";
+		};
+		0E46559F27F013390024059C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0E4655A027F013410024059C /* TextView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0E4655A027F013410024059C /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				0E4655A127F0136E0024059C /* TextInputView.swift */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		0E62F4A727EEC973009EC224 = {
@@ -73,6 +97,7 @@
 		0E62F4B227EEC973009EC224 /* NoteTaking */ = {
 			isa = PBXGroup;
 			children = (
+				0E46559F27F013390024059C /* Components */,
 				0E62F4D127EEE0BF009EC224 /* ViewModels */,
 				0E62F4CB27EED832009EC224 /* Models */,
 				0E62F4C527EECEB8009EC224 /* Utils */,
@@ -123,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				0E62F4C927EED0FB009EC224 /* ColorExtension.swift */,
+				0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */,
+				0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,6 +211,9 @@
 			dependencies = (
 			);
 			name = NoteTaking;
+			packageProductDependencies = (
+				0E4655A427F01F220024059C /* IQKeyboardManagerSwift */,
+			);
 			productName = NoteTaking;
 			productReference = 0E62F4B027EEC973009EC224 /* NoteTaking.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 0E62F4A727EEC973009EC224;
+			packageReferences = (
+				0E4655A327F01F220024059C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 0E62F4B127EEC973009EC224 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -238,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4655A227F0136E0024059C /* TextInputView.swift in Sources */,
 				0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */,
 				0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */,
 				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
@@ -247,6 +281,8 @@
 				0E62F4C727EECEC8009EC224 /* Colors.swift in Sources */,
 				0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */,
 				0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */,
+				0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */,
+				0E4655A727F02C0B0024059C /* UITextViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +485,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E4655A327F01F220024059C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 6.5.9;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E4655A427F01F220024059C /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E4655A327F01F220024059C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E62F4A827EEC973009EC224 /* Project object */;
 }
