@@ -19,7 +19,7 @@ struct TextInputView: UIViewRepresentable {
     var maximumNumberOfLines: Int
     
     @Binding var text: String
-    var textDidChange: (UITextView) -> Void
+    @Binding var didStartEditing: Bool
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -37,37 +37,38 @@ struct TextInputView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = placeHolderText
-        uiView.textColor = UIColor(placeHolderColor)
-        DispatchQueue.main.async {
-            self.textDidChange(uiView)
+        if didStartEditing {
+            uiView.text = self.text
+            uiView.textColor = UIColor(textColor)
+            uiView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        } else {
+            uiView.text = placeHolderText
+            uiView.textColor = UIColor(placeHolderColor)
         }
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(text: $text, placeHolderColor: placeHolderColor, textColor: textColor, placeHolderText: placeHolderText, textViewDidChange: textDidChange)
+        Coordinator(text: $text, placeHolderColor: placeHolderColor, textColor: textColor, placeHolderText: placeHolderText)
     }
 }
 
 extension TextInputView {
     
     class Coordinator: NSObject, UITextViewDelegate {
-        @Binding private var text: String
+        var text: Binding<String>
         let placeHolderColor: Color
         let placeHolderText: String
         let textColor: Color
-        var textDidChange: (UITextView) -> Void
         
-        init(text: Binding<String>, placeHolderColor: Color, textColor: Color, placeHolderText: String, textViewDidChange: @escaping (UITextView) -> Void) {
-            _text = text
+        init(text: Binding<String>, placeHolderColor: Color, textColor: Color, placeHolderText: String) {
+            self.text = text
             self.placeHolderColor = placeHolderColor
             self.textColor = textColor
             self.placeHolderText = placeHolderText
-            self.textDidChange = textViewDidChange
         }
         
         func textViewDidBeginEditing(_ textView: UITextView) {
-            if textView.textColor == UIColor(placeHolderColor) {
+            if textView.text == placeHolderText {
                 textView.text = ""
                 textView.textColor = UIColor(textColor)
             }
@@ -77,12 +78,12 @@ extension TextInputView {
             if textView.text.isEmpty {
                 textView.text = placeHolderText
                 textView.textColor = UIColor(placeHolderColor)
+                textView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
             }
         }
         
         func textViewDidChange(_ textView: UITextView) {
-            self.text = textView.text
-            self.textDidChange(textView)
+            self.text.wrappedValue = textView.text
         }
     }
     

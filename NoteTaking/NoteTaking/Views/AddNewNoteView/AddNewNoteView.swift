@@ -10,8 +10,13 @@ import SwiftUI
 struct AddNewNoteView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var titleText: String = ""
-    @State var descNote: String = ""
+    
+    @StateObject private var viewModel: AddNewNoteViewModel
+    @State private var didStartEditing = false
+    
+    init(noteModel: NoteModel?) {
+        _viewModel = .init(wrappedValue: AddNewNoteViewModel(noteModel: noteModel))
+    }
     
     var body: some View {
         ZStack {
@@ -39,7 +44,7 @@ struct AddNewNoteView: View {
             }
             Spacer()
             Button(action: {
-                
+                viewModel.createNewNote()
             }) {
                 Image("dots")
                     .resizable()
@@ -50,9 +55,9 @@ struct AddNewNoteView: View {
     
     @ViewBuilder
     func titleInputView() -> some View {
-        TextField("", text: $titleText)
+        TextField("", text: $viewModel.noteModel.title)
             .font(.system(size: 34).bold())
-            .placeholder(when: titleText.isEmpty, placeholder: {
+            .placeholder(when: viewModel.noteModel.title.isEmpty, placeholder: {
                 Text("Title")
                     .font(.system(size: 34).bold())
                     .foregroundColor(.santasGray)
@@ -62,15 +67,21 @@ struct AddNewNoteView: View {
     
     @ViewBuilder
     func descInputView() -> some View {
-        TextInputView(placeHolderText: "Type something...", placeHolderColor: .santasGray, textColor: .black, maximumNumberOfLines: 0, text: $descNote, textDidChange: { _ in
-            
-        })
+        TextInputView(placeHolderText: "Type something...",
+                      placeHolderColor: .santasGray,
+                      textColor: .black,
+                      maximumNumberOfLines: 0,
+                      text: $viewModel.noteModel.noteDetail,
+                      didStartEditing: $didStartEditing)
+        .onTapGesture {
+            didStartEditing = true
+        }
         .padding()
     }
 }
 
 struct AddNewNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewNoteView()
+        AddNewNoteView(noteModel: nil)
     }
 }

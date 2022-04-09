@@ -19,4 +19,11 @@ extension View {
                 self
             }
         }
+    
+    @ViewBuilder public func hidden(_ shouldHide: Bool) -> some View {
+        switch shouldHide {
+        case true: self.hidden()
+        case false: self
+        }
+    }
 }

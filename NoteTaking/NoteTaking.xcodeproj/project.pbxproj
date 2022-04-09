@@ -22,6 +22,7 @@
 		0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */; };
 		0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */; };
 		0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */; };
+		0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNoteView.swift; sourceTree = "<group>"; };
 		0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,8 @@
 		0E62F4D127EEE0BF009EC224 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */,
+				0EA6EDD828013404001C9676 /* AddNewNoteViewModel */,
+				0EA6EDDB2801341D001C9676 /* HomeViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,6 +196,22 @@
 				0E62F4D627EEE7E6009EC224 /* GroupNoteView.swift */,
 			);
 			path = GroupNoteView;
+			sourceTree = "<group>";
+		};
+		0EA6EDD828013404001C9676 /* AddNewNoteViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */,
+			);
+			path = AddNewNoteViewModel;
+			sourceTree = "<group>";
+		};
+		0EA6EDDB2801341D001C9676 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E62F4D227EEE0D0009EC224 /* HomeViewModel.swift */,
+			);
+			path = HomeViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +292,7 @@
 			files = (
 				0E4655A227F0136E0024059C /* TextInputView.swift in Sources */,
 				0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */,
+				0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */,
 				0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */,
 				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
 				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,

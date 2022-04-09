@@ -27,7 +27,7 @@ struct HomeView: View {
                 
                 VStack {
                     HStack {
-                        NavigationLink(destination: AddNewNoteView()) {
+                        NavigationLink(destination: AddNewNoteView(noteModel: nil)) {
                             Image("plus")
                                 .resizable()
                                 .frame(width: 70, height: 70, alignment: .center)
@@ -42,6 +42,7 @@ struct HomeView: View {
             }
             .navigationBarHidden(true)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             viewModel.fetchGroupNote()
         }
