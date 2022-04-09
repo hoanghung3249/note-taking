@@ -10,6 +10,7 @@ import Foundation
 class AddNewNoteViewModel: ObservableObject {
     
     @Published var noteModel = NoteModel()
+    @Published var didComplete = false
     
     init(noteModel: NoteModel?) {
         if let noteModel = noteModel {
@@ -21,5 +22,10 @@ class AddNewNoteViewModel: ObservableObject {
     func createNewNote() {
         noteModel.dateAdded = Date()
         print(noteModel)
+        didComplete = true
+    }
+    
+    func editedNote() {
+        didComplete = true
     }
 }

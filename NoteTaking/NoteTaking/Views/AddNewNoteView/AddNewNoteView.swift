@@ -28,6 +28,11 @@ struct AddNewNoteView: View {
                 descInputView()
             }
             .frame(maxHeight: .infinity, alignment: .top)
+            .onChange(of: viewModel.didComplete) { newValue in
+                if newValue {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
         }
         .navigationBarHidden(true)
     }
@@ -43,13 +48,29 @@ struct AddNewNoteView: View {
                     .frame(width: 30, height: 30, alignment: .center)
             }
             Spacer()
-            Button(action: {
-                viewModel.createNewNote()
-            }) {
-                Image("dots")
-                    .resizable()
-                    .frame(width: 30, height: 30, alignment: .center)
+            if viewModel.noteModel.dateAdded != nil {
+                Button(action: {
+                    viewModel.editedNote()
+                }) {
+                    Image("dots")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                }
+            } else {
+                Button(action: {
+                    viewModel.createNewNote()
+                }) {
+                    Text("Save")
+                        .foregroundColor(.black.opacity(0.5))
+                        .font(.system(size: 18).bold())
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 13)
+                                .foregroundColor(.periwinkleGray)
+                        )
+                }
             }
+            
         }.padding(.horizontal)
     }
     
