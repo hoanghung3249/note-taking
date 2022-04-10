@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */; };
+		0E38F21A280282AD004C4F5B /* ListNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F219280282AD004C4F5B /* ListNoteView.swift */; };
+		0E38F21D28028404004C4F5B /* ListNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F21C28028404004C4F5B /* ListNoteViewModel.swift */; };
+		0E38F22028028788004C4F5B /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F21F28028788004C4F5B /* NoteView.swift */; };
+		0E38F22228028A84004C4F5B /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F22128028A84004C4F5B /* DateExtensions.swift */; };
 		0E4655A227F0136E0024059C /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4655A127F0136E0024059C /* TextInputView.swift */; };
 		0E4655A527F01F220024059C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0E4655A427F01F220024059C /* IQKeyboardManagerSwift */; };
 		0E4655A727F02C0B0024059C /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */; };
@@ -28,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
+		0E38F219280282AD004C4F5B /* ListNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteView.swift; sourceTree = "<group>"; };
+		0E38F21C28028404004C4F5B /* ListNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteViewModel.swift; sourceTree = "<group>"; };
+		0E38F21F28028788004C4F5B /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		0E38F22128028A84004C4F5B /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		0E4655A127F0136E0024059C /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
 		0E62F4B027EEC973009EC224 /* NoteTaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +72,30 @@
 				0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */,
 			);
 			path = AddNewNoteView;
+			sourceTree = "<group>";
+		};
+		0E38F21828028285004C4F5B /* ListNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				0E38F219280282AD004C4F5B /* ListNoteView.swift */,
+			);
+			path = ListNoteView;
+			sourceTree = "<group>";
+		};
+		0E38F21B280283F2004C4F5B /* ListNoteViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E38F21C28028404004C4F5B /* ListNoteViewModel.swift */,
+			);
+			path = ListNoteViewModel;
+			sourceTree = "<group>";
+		};
+		0E38F21E28028779004C4F5B /* NoteView */ = {
+			isa = PBXGroup;
+			children = (
+				0E38F21F28028788004C4F5B /* NoteView.swift */,
+			);
+			path = NoteView;
 			sourceTree = "<group>";
 		};
 		0E46559F27F013390024059C /* Components */ = {
@@ -125,6 +157,7 @@
 		0E62F4C127EEC9F9009EC224 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E38F21828028285004C4F5B /* ListNoteView */,
 				0E1FA39727EF1D5600372F34 /* AddNewNoteView */,
 				0E62F4D427EEE7C8009EC224 /* ChildViews */,
 				0E62F4C227EECA05009EC224 /* HomeView */,
@@ -155,6 +188,7 @@
 				0E62F4C927EED0FB009EC224 /* ColorExtension.swift */,
 				0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */,
 				0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */,
+				0E38F22128028A84004C4F5B /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +213,7 @@
 		0E62F4D127EEE0BF009EC224 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0E38F21B280283F2004C4F5B /* ListNoteViewModel */,
 				0EA6EDD828013404001C9676 /* AddNewNoteViewModel */,
 				0EA6EDDB2801341D001C9676 /* HomeViewModel */,
 			);
@@ -188,6 +223,7 @@
 		0E62F4D427EEE7C8009EC224 /* ChildViews */ = {
 			isa = PBXGroup;
 			children = (
+				0E38F21E28028779004C4F5B /* NoteView */,
 				0E62F4D527EEE7D6009EC224 /* GroupNoteView */,
 			);
 			path = ChildViews;
@@ -301,10 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E38F21D28028404004C4F5B /* ListNoteViewModel.swift in Sources */,
 				0E4655A227F0136E0024059C /* TextInputView.swift in Sources */,
 				0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */,
 				0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */,
 				0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */,
+				0E38F22228028A84004C4F5B /* DateExtensions.swift in Sources */,
 				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
 				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,
 				0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */,
@@ -312,6 +350,8 @@
 				0EA6EDDE28014B7C001C9676 /* VerticalIndicatorView.swift in Sources */,
 				0E62F4C727EECEC8009EC224 /* Colors.swift in Sources */,
 				0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */,
+				0E38F22028028788004C4F5B /* NoteView.swift in Sources */,
+				0E38F21A280282AD004C4F5B /* ListNoteView.swift in Sources */,
 				0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */,
 				0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */,
 				0E4655A727F02C0B0024059C /* UITextViewExtensions.swift in Sources */,

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct NoteModel: Codable {
+struct NoteModel: Codable, Identifiable {
+    var id = UUID()
     var title: String = ""
     var noteDetail: String = ""
     var dateAdded: Date?

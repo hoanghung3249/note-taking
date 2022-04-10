@@ -94,7 +94,11 @@ struct HomeView: View {
     func listNotes() -> some View {
         ScrollView {
             ForEach(viewModel.groupNotes) { note in
-                GroupNoteView(groupNote: note)
+                NavigationLink(destination: ListNoteView(viewModel: ListNoteViewModel(groupNoteModel: note))) {
+                    GroupNoteView(groupNote: note)
+                }
+                .buttonStyle(PlainButtonStyle())
+//                GroupNoteView(groupNote: note)
             }
         }
         .padding(.horizontal)

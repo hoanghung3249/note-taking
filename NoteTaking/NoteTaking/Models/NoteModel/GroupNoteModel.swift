@@ -29,7 +29,12 @@ struct GroupNoteModel: Codable, Identifiable {
 }
 
 let mockingGroupNotes = [
-    GroupNoteModel(name: "Work", numberOfNote: 3, dateAdded: Date(), groupNoteType: .folder),
+    GroupNoteModel(name: "Work", numberOfNote: 3, dateAdded: Date(), groupNoteType: .folder, notes: [
+        NoteModel(title: "Notes about Flutter and Dart", noteDetail: "Testing", dateAdded: Date().previousDate().previousDate()),
+        NoteModel(title: "SwiftUI and Combine", noteDetail: "Testing", dateAdded: Date().previousDate()),
+        NoteModel(title: "Algorithm and Data Structure in Swift", noteDetail: "Testing", dateAdded: Date().previousDate().previousDate()),
+    ]
+    ),
     GroupNoteModel(name: "Resources", numberOfNote: 5, dateAdded: Date(), groupNoteType: .folder),
     GroupNoteModel(name: "Movies", numberOfNote: 16, dateAdded: Date(), groupNoteType: .folder),
     GroupNoteModel(name: "To Do List", numberOfNote: 6, dateAdded: Date(), groupNoteType: .list),
