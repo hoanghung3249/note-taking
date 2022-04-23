@@ -97,8 +97,8 @@ struct HomeView: View {
                 NavigationLink(destination: ListNoteView(viewModel: ListNoteViewModel(groupNoteModel: note))) {
                     GroupNoteView(groupNote: note)
                 }
+                // Show plain button without navigationlink overlay
                 .buttonStyle(PlainButtonStyle())
-//                GroupNoteView(groupNote: note)
             }
         }
         .padding(.horizontal)
