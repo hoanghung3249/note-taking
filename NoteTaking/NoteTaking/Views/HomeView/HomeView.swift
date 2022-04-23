@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel = HomeViewModel()
+    @State private var isShownPopUp = false
     
     var body: some View {
         NavigationView {
@@ -45,6 +46,9 @@ struct HomeView: View {
                 }
             }
             .navigationBarHidden(true)
+            .popUp(isPresented: isShownPopUp, alignment: .center) {
+                Color.green.frame(width: 100, height: 100, alignment: .center)
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
@@ -66,7 +70,9 @@ struct HomeView: View {
             }
             Spacer()
             
-            Button(action: {}) {
+            Button(action: {
+                isShownPopUp.toggle()
+            }) {
                 Image("loupe")
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)

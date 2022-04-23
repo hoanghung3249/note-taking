@@ -26,4 +26,10 @@ extension View {
         case false: self
         }
     }
+    
+    func popUp<T: View>(isPresented: Bool,
+                        alignment: Alignment = .center,
+                        @ViewBuilder content: () -> T) -> some View {
+        modifier(NoteAppPopUpView(isPresented: isPresented, alignment: alignment, content: content))
+    }
 }
