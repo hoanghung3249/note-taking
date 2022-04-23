@@ -21,18 +21,27 @@ struct AddNewNoteView: View {
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-            VStack(spacing: 10) {
-                headerView()
-                titleInputView()
-                    
-                descInputView()
-            }
-            .frame(maxHeight: .infinity, alignment: .top)
-            .onChange(of: viewModel.didComplete) { newValue in
-                if newValue {
-                    presentationMode.wrappedValue.dismiss()
+            KeyboardView {
+                VStack(spacing: 10) {
+                    headerView()
+                    titleInputView()
+                        
+                    descInputView()
                 }
+                .frame(maxHeight: .infinity, alignment: .top)
+                .onChange(of: viewModel.didComplete) { newValue in
+                    if newValue {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            } toolBar: {
+                HStack {
+                    Spacer()
+                    Text("Done")
+                }
+                .padding()
             }
+
         }
         .navigationBarHidden(true)
     }
@@ -40,6 +49,7 @@ struct AddNewNoteView: View {
     @ViewBuilder
     func headerView() -> some View {
         HStack {
+            // Back Button
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
@@ -47,7 +57,20 @@ struct AddNewNoteView: View {
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)
             }
-            Spacer()
+            
+            // Note's date
+            if viewModel.noteModel.dateAdded != nil {
+                Spacer()
+                Text(
+                    viewModel.noteModel.dateAdded?.toString(format: "dd/MM/yyyy HH:mm") ?? ""
+                )
+                    .font(.headline.weight(.heavy))
+                Spacer()
+            } else {
+                Spacer()
+            }
+            
+            // Button Save/Edit
             if viewModel.noteModel.dateAdded != nil {
                 Button(action: {
                     viewModel.editedNote()
@@ -77,10 +100,11 @@ struct AddNewNoteView: View {
     @ViewBuilder
     func titleInputView() -> some View {
         TextField("", text: $viewModel.noteModel.title)
-            .font(.system(size: 34).bold())
+            .font(.system(size: 28).bold())
+            .disableAutocorrection(true)
             .placeholder(when: viewModel.noteModel.title.isEmpty, placeholder: {
                 Text("Title")
-                    .font(.system(size: 34).bold())
+                    .font(.system(size: 28).bold())
                     .foregroundColor(.santasGray)
             })
             .padding()
@@ -96,6 +120,11 @@ struct AddNewNoteView: View {
                       didStartEditing: $didStartEditing)
         .onTapGesture {
             didStartEditing = true
+        }
+        .onAppear {
+            if !viewModel.noteModel.noteDetail.isEmpty {
+                didStartEditing = true
+            }
         }
         .padding()
     }

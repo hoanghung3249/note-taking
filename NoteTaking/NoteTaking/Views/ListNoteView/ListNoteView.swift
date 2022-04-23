@@ -58,11 +58,17 @@ struct ListNoteView: View {
     func listNotes() -> some View {
         ScrollView {
             ForEach(viewModel.listNotesModel?.notes ?? []) { note in
-                NoteView(noteModel: note)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(.whiteLilac.opacity(0.7))
-                    )
+                NavigationLink(destination: AddNewNoteView(noteModel: note)) {
+                    NoteView(noteModel: note)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.whiteLilac.opacity(0.7))
+                        )
+                }
+                .buttonStyle(PlainButtonStyle())
+                .onTapGesture {
+                    print(note)
+                }
             }
         }
         .padding(.horizontal)

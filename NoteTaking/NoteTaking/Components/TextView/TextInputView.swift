@@ -23,13 +23,21 @@ struct TextInputView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
-        textView.text = placeHolderText
-        textView.textColor = UIColor(placeHolderColor)
-        textView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        if !text.isEmpty {
+            textView.text = text
+            textView.textColor = UIColor(textColor)
+            textView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        } else {
+            textView.text = placeHolderText
+            textView.textColor = UIColor(placeHolderColor)
+            textView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        }
         textView.isUserInteractionEnabled = true
         textView.textContainer.maximumNumberOfLines = maximumNumberOfLines
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.isEditable = true
+        textView.autocorrectionType = .no
+        textView.spellCheckingType = .no
         textView.isScrollEnabled = true 
         
         textView.delegate = context.coordinator
