@@ -61,10 +61,9 @@ struct AddNewNoteView: View {
             // Note's date
             if viewModel.noteModel.dateAdded != nil {
                 Spacer()
-                Text(
-                    viewModel.noteModel.dateAdded?.toString(format: "dd/MM/yyyy HH:mm") ?? ""
-                )
-                    .font(.headline.weight(.heavy))
+                Text(viewModel.noteDateDetail())
+                .foregroundColor(.scarpaFlow)
+                .font(.headline.weight(.heavy))
                 Spacer()
             } else {
                 Spacer()

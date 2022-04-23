@@ -18,7 +18,6 @@ class AddNewNoteViewModel: ObservableObject {
         }
     }
     
-    
     func createNewNote() {
         noteModel.dateAdded = Date()
         print(noteModel)
@@ -27,5 +26,11 @@ class AddNewNoteViewModel: ObservableObject {
     
     func editedNote() {
         didComplete = true
+    }
+    
+    func noteDateDetail() -> String {
+        guard let date = noteModel.dateAdded else { return "" }
+        let string = "\(date.toString(format: "MMM dd, yyyy")) at \(date.toString(format: "HH:mm"))"
+        return string
     }
 }
