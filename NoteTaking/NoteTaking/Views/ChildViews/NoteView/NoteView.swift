@@ -27,7 +27,7 @@ struct NoteView: View {
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        let noteModel = NoteModel(id: UUID(), title: "Notes about learning flutter in 3 months. Notes about learning flutter", noteDetail: "Learning Future", dateAdded: Date())
+        let noteModel = NoteModel(title: "Notes about learning flutter in 3 months. Notes about learning flutter", noteDetail: "Learning Future", dateAdded: Date())
         NoteView(noteModel: noteModel)
     }
 }

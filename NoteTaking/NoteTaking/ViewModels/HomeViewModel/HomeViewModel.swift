@@ -9,11 +9,11 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published var groupNotes = [GroupNoteModel]()
-    @Published var isLoading = true
+    @Published private(set) var groupNotes = [GroupNoteModel]()
+    @Published private(set) var isLoading = true
     
     func fetchGroupNote() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.groupNotes = mockingGroupNotes
             self.isLoading = false
         }

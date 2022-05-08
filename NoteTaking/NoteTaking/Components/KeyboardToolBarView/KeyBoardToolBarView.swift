@@ -58,7 +58,7 @@ struct KeyboardView<Content, ToolBar> : View where Content : View, ToolBar: View
                  Spacer()
                  toolBar()
                     .frame(width: toolbarFrame.width, height: toolbarFrame.height)
-                    .background(Color.secondary)
+                    .background(Color.whiteLilac)
             }
             .opacity((keyboard.currentHeight == 0) ? 0 : 1)
             .animation(.easeOut)

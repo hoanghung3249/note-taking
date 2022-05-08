@@ -13,6 +13,7 @@ struct AddNewNoteView: View {
     
     @StateObject private var viewModel: AddNewNoteViewModel
     @State private var didStartEditing = false
+    @State private var isOpenPhoto = false
     
     init(noteModel: NoteModel?) {
         _viewModel = .init(wrappedValue: AddNewNoteViewModel(noteModel: noteModel))
@@ -36,13 +37,35 @@ struct AddNewNoteView: View {
                 }
             } toolBar: {
                 HStack {
+                    Button {
+                        isOpenPhoto.toggle()
+                    } label: {
+                        Image("image")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                    }
+
+                    Button {
+                        print("Adjust font size")
+                    } label: {
+                        Image("font-size-icon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                    }
+                    
                     Spacer()
                     Text("Done")
                 }
                 .padding()
             }
-
         }
+        .sheet(isPresented: $isOpenPhoto, content: {
+            ImagePicker(sourceType: .photoLibrary) { image in
+                viewModel.addingImage(image)
+            }
+        })
         .navigationBarHidden(true)
     }
     
@@ -116,7 +139,8 @@ struct AddNewNoteView: View {
                       textColor: .black,
                       maximumNumberOfLines: 0,
                       text: $viewModel.noteModel.noteDetail,
-                      didStartEditing: $didStartEditing)
+                      didStartEditing: $didStartEditing,
+                      textAttributed: $viewModel.noteModel.noteDetailAttributed)
         .onTapGesture {
             didStartEditing = true
         }

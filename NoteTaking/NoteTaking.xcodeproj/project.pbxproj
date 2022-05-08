@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */; };
+		0E1FE16528262640008CAAE5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FE16428262640008CAAE5 /* ImagePicker.swift */; };
+		0E1FE16728263446008CAAE5 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FE16628263446008CAAE5 /* BindingExtensions.swift */; };
+		0E1FE16928266113008CAAE5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FE16828266113008CAAE5 /* UIImageExtensions.swift */; };
+		0E1FE16B28266232008CAAE5 /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FE16A28266232008CAAE5 /* UIScreenExtensions.swift */; };
+		0E1FE16D28277A0C008CAAE5 /* UINavigationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FE16C28277A0C008CAAE5 /* UINavigationExtensions.swift */; };
 		0E38F21A280282AD004C4F5B /* ListNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F219280282AD004C4F5B /* ListNoteView.swift */; };
 		0E38F21D28028404004C4F5B /* ListNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F21C28028404004C4F5B /* ListNoteViewModel.swift */; };
 		0E38F22028028788004C4F5B /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38F21F28028788004C4F5B /* NoteView.swift */; };
@@ -34,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		0E1FA39827EF1D6B00372F34 /* AddNewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteView.swift; sourceTree = "<group>"; };
+		0E1FE16428262640008CAAE5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0E1FE16628263446008CAAE5 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
+		0E1FE16828266113008CAAE5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		0E1FE16A28266232008CAAE5 /* UIScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtensions.swift; sourceTree = "<group>"; };
+		0E1FE16C28277A0C008CAAE5 /* UINavigationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationExtensions.swift; sourceTree = "<group>"; };
 		0E38F219280282AD004C4F5B /* ListNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteView.swift; sourceTree = "<group>"; };
 		0E38F21C28028404004C4F5B /* ListNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteViewModel.swift; sourceTree = "<group>"; };
 		0E38F21F28028788004C4F5B /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
@@ -78,6 +88,14 @@
 			path = AddNewNoteView;
 			sourceTree = "<group>";
 		};
+		0E1FE16328262635008CAAE5 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				0E1FE16428262640008CAAE5 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		0E38F21828028285004C4F5B /* ListNoteView */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +123,7 @@
 		0E46559F27F013390024059C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0E1FE16328262635008CAAE5 /* ImagePicker */,
 				0E9C0DAC2813BF3800525410 /* NoteAppPopUpView */,
 				0E9C0DA92813B48300525410 /* KeyboardToolBarView */,
 				0EA6EDDC28014B6B001C9676 /* VerticalIndicatorView */,
@@ -195,6 +214,10 @@
 				0E4655A627F02C0B0024059C /* UITextViewExtensions.swift */,
 				0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */,
 				0E38F22128028A84004C4F5B /* DateExtensions.swift */,
+				0E1FE16628263446008CAAE5 /* BindingExtensions.swift */,
+				0E1FE16828266113008CAAE5 /* UIImageExtensions.swift */,
+				0E1FE16A28266232008CAAE5 /* UIScreenExtensions.swift */,
+				0E1FE16C28277A0C008CAAE5 /* UINavigationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,17 +385,22 @@
 				0E38F21D28028404004C4F5B /* ListNoteViewModel.swift in Sources */,
 				0E4655A227F0136E0024059C /* TextInputView.swift in Sources */,
 				0E62F4CE27EEDA7F009EC224 /* GroupNoteModel.swift in Sources */,
+				0E1FE16528262640008CAAE5 /* ImagePicker.swift in Sources */,
 				0E9C0DAE2813BF5600525410 /* NoteAppPopUpView.swift in Sources */,
 				0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */,
 				0E62F4D027EEDB14009EC224 /* NoteModel.swift in Sources */,
+				0E1FE16928266113008CAAE5 /* UIImageExtensions.swift in Sources */,
 				0E38F22228028A84004C4F5B /* DateExtensions.swift in Sources */,
 				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
+				0E1FE16728263446008CAAE5 /* BindingExtensions.swift in Sources */,
 				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,
 				0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */,
 				0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */,
 				0EA6EDDE28014B7C001C9676 /* VerticalIndicatorView.swift in Sources */,
 				0E62F4C727EECEC8009EC224 /* Colors.swift in Sources */,
 				0E62F4B427EEC973009EC224 /* NoteTakingApp.swift in Sources */,
+				0E1FE16B28266232008CAAE5 /* UIScreenExtensions.swift in Sources */,
+				0E1FE16D28277A0C008CAAE5 /* UINavigationExtensions.swift in Sources */,
 				0E38F22028028788004C4F5B /* NoteView.swift in Sources */,
 				0E38F21A280282AD004C4F5B /* ListNoteView.swift in Sources */,
 				0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */,
@@ -435,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -489,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -510,11 +538,14 @@
 				DEVELOPMENT_TEAM = LRKSJFWZFK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to your camera to allow you to add photo into your note.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs access to your photo library to allow you to add photo into your note.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,11 +571,14 @@
 				DEVELOPMENT_TEAM = LRKSJFWZFK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to your camera to allow you to add photo into your note.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs access to your photo library to allow you to add photo into your note.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

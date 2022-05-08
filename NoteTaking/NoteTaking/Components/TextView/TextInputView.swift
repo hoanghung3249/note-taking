@@ -20,11 +20,13 @@ struct TextInputView: UIViewRepresentable {
     
     @Binding var text: String
     @Binding var didStartEditing: Bool
+    @Binding var textAttributed: NSAttributedString
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
-        if !text.isEmpty {
-            textView.text = text
+        if !textAttributed.string.isEmpty {
+//            textView.text = text
+            textView.attributedText = textAttributed
             textView.textColor = UIColor(textColor)
             textView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         } else {
@@ -46,7 +48,7 @@ struct TextInputView: UIViewRepresentable {
     
     func updateUIView(_ uiView: UITextView, context: Context) {
         if didStartEditing {
-            uiView.text = self.text
+            uiView.attributedText = self.textAttributed
             uiView.textColor = UIColor(textColor)
             uiView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         } else {
@@ -56,43 +58,70 @@ struct TextInputView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(text: $text, placeHolderColor: placeHolderColor, textColor: textColor, placeHolderText: placeHolderText)
+        Coordinator(parent: self)
     }
 }
 
 extension TextInputView {
     
     class Coordinator: NSObject, UITextViewDelegate {
-        var text: Binding<String>
-        let placeHolderColor: Color
-        let placeHolderText: String
-        let textColor: Color
+        var parent: TextInputView
         
-        init(text: Binding<String>, placeHolderColor: Color, textColor: Color, placeHolderText: String) {
-            self.text = text
-            self.placeHolderColor = placeHolderColor
-            self.textColor = textColor
-            self.placeHolderText = placeHolderText
+        init(parent: TextInputView) {
+            self.parent = parent
         }
         
         func textViewDidBeginEditing(_ textView: UITextView) {
-            if textView.text == placeHolderText {
+            if textView.text == parent.placeHolderText {
                 textView.text = ""
-                textView.textColor = UIColor(textColor)
+                textView.textColor = UIColor(parent.textColor)
             }
         }
         
         func textViewDidEndEditing(_ textView: UITextView) {
-            if textView.text.isEmpty {
-                textView.text = placeHolderText
-                textView.textColor = UIColor(placeHolderColor)
+            if textView.attributedText.string.isEmpty {
+                textView.text = parent.placeHolderText
+                textView.textColor = UIColor(parent.placeHolderColor)
                 textView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
             }
         }
         
         func textViewDidChange(_ textView: UITextView) {
-            self.text.wrappedValue = textView.text
+            self.parent.textAttributed = textView.attributedText
         }
+        
+//        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            
+//            let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+//            let attributedString = NSAttributedString(string: text)
+//            let mutableString = NSMutableAttributedString(attributedString: textAttributed.wrappedValue)
+//            mutableString.append(attributedString)
+            
+//            print(mutableString)
+//            
+//            self.textAttributed.wrappedValue = mutableString
+//            let cursor = NSRange(location: textView.selectedRange.location + 1, length: 0)
+//            textView.selectedRange = cursor
+//            if mutableString.containsAttachments(in: range) {
+//                textView.textStorage.insert(attributedString, at: range.location)
+//                let cursor = NSRange(location: textView.selectedRange.location + 1, length: 0)
+//                textView.selectedRange = cursor
+//            } else {
+//                textView.attributedText = mutableString
+//            }
+//            return true
+//            if text.count > 0 {
+//                let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+//                textView.text = newText
+//                return true
+//            } else {
+//                let attributedString = NSMutableAttributedString(string: text)
+//                textView.textStorage.insert(attributedString, at: range.location)
+//                let cursor = NSRange(location: textView.selectedRange.location + 1, length: 0)
+//                textView.selectedRange = cursor
+//            }
+//            return true
+//        }
     }
     
 }
