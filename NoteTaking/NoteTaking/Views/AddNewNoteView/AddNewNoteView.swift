@@ -11,22 +11,31 @@ struct AddNewNoteView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @StateObject private var viewModel: AddNewNoteViewModel
+//    @StateObject private var viewModel: AddNewNoteViewModel
+    @ObservedObject var viewModel: AppViewModel
     @State private var didStartEditing = false
     @State private var isOpenPhoto = false
+    @State private var isShowToolBar = false
     
-    init(noteModel: NoteModel?) {
-        _viewModel = .init(wrappedValue: AddNewNoteViewModel(noteModel: noteModel))
-    }
+//    init(noteModel: NoteModel?, addNoteType: AddNoteType) {
+//        _viewModel = .init(wrappedValue: AddNewNoteViewModel(noteModel: noteModel, addNoteType: addNoteType))
+//        viewModel.setSelectedNote(noteModel)
+//    }
+    
     
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-            KeyboardView {
+            KeyboardView(isShowToolBar: $isShowToolBar) {
                 VStack(spacing: 10) {
                     headerView()
                     titleInputView()
-                        
+                        .onTapGesture {
+                            withAnimation {
+                                isShowToolBar = false
+                            }
+                        }
+                    
                     descInputView()
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
@@ -74,6 +83,7 @@ struct AddNewNoteView: View {
         HStack {
             // Back Button
             Button(action: {
+                viewModel.removeSelectedNote()
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Image("back")
@@ -82,7 +92,7 @@ struct AddNewNoteView: View {
             }
             
             // Note's date
-            if viewModel.noteModel.dateAdded != nil {
+            if viewModel.selectedNote.dateAdded != nil {
                 Spacer()
                 Text(viewModel.noteDateDetail())
                 .foregroundColor(.scarpaFlow)
@@ -93,7 +103,7 @@ struct AddNewNoteView: View {
             }
             
             // Button Save/Edit
-            if viewModel.noteModel.dateAdded != nil {
+            if viewModel.selectedNote.dateAdded != nil {
                 Button(action: {
                     viewModel.editedNote()
                 }) {
@@ -121,10 +131,10 @@ struct AddNewNoteView: View {
     
     @ViewBuilder
     func titleInputView() -> some View {
-        TextField("", text: $viewModel.noteModel.title)
+        TextField("", text: $viewModel.selectedNote.title)
             .font(.system(size: 28).bold())
             .disableAutocorrection(true)
-            .placeholder(when: viewModel.noteModel.title.isEmpty, placeholder: {
+            .placeholder(when: viewModel.selectedNote.title.isEmpty, placeholder: {
                 Text("Title")
                     .font(.system(size: 28).bold())
                     .foregroundColor(.santasGray)
@@ -138,14 +148,17 @@ struct AddNewNoteView: View {
                       placeHolderColor: .santasGray,
                       textColor: .black,
                       maximumNumberOfLines: 0,
-                      text: $viewModel.noteModel.noteDetail,
+                      text: $viewModel.selectedNote.noteDetail,
                       didStartEditing: $didStartEditing,
-                      textAttributed: $viewModel.noteModel.noteDetailAttributed)
+                      textAttributed: $viewModel.selectedNote.noteDetailAttributed)
         .onTapGesture {
             didStartEditing = true
+            withAnimation {
+                isShowToolBar = true
+            }
         }
         .onAppear {
-            if !viewModel.noteModel.noteDetail.isEmpty {
+            if !viewModel.selectedNote.noteDetail.isEmpty {
                 didStartEditing = true
             }
         }
@@ -155,6 +168,6 @@ struct AddNewNoteView: View {
 
 struct AddNewNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewNoteView(noteModel: nil)
+        AddNewNoteView(viewModel: AppViewModel())
     }
 }

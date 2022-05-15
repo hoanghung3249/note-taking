@@ -10,15 +10,23 @@ import UIKit
 import SwiftUI
 import Combine
 
+enum AddNoteType {
+    case emptyGroup
+    case withGroup(groupModel: GroupNoteModel)
+    case withAllGroup(groupsModel: [GroupNoteModel])
+}
+
 class AddNewNoteViewModel: ObservableObject {
     
     @Published var noteModel = NoteModel(title: "", noteDetail: "", dateAdded: nil)
     @Published var didComplete = false
+    private var addNoteType: AddNoteType
     
-    init(noteModel: NoteModel?) {
+    init(noteModel: NoteModel?, addNoteType: AddNoteType) {
         if let noteModel = noteModel {
             self.noteModel = noteModel
         }
+        self.addNoteType = addNoteType
     }
     
     func createNewNote() {
@@ -28,6 +36,7 @@ class AddNewNoteViewModel: ObservableObject {
     }
     
     func editedNote() {
+        noteModel.dateAdded = Date()
         didComplete = true
     }
     
@@ -54,6 +63,18 @@ class AddNewNoteViewModel: ObservableObject {
         withAnimation { [weak self] in
             guard let self = self else { return }
             self.noteModel.noteDetailAttributed = fullString
+        }
+    }
+    
+    func saveNote() {
+        switch addNoteType {
+        case .emptyGroup:
+            print("Save to all notes")
+        case .withGroup(let groupModel):
+            print("Save to group: \(groupModel.name)")
+            
+        case .withAllGroup(let groupsModel):
+            print("Choose one of the options")
         }
     }
 }

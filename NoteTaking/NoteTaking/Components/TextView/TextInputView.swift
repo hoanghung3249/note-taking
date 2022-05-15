@@ -41,12 +41,13 @@ struct TextInputView: UIViewRepresentable {
         textView.autocorrectionType = .no
         textView.spellCheckingType = .no
         textView.isScrollEnabled = true 
-        
+        canPerformActionOn(textView, canPerform: false)
         textView.delegate = context.coordinator
         return textView
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
+        canPerformActionOn(uiView, canPerform: true)
         if didStartEditing {
             uiView.attributedText = self.textAttributed
             uiView.textColor = UIColor(textColor)
@@ -59,6 +60,11 @@ struct TextInputView: UIViewRepresentable {
     
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
+    }
+    
+    private func canPerformActionOn(_ textView: UITextView, canPerform: Bool) {
+        textView.isEditable = canPerform
+        textView.isSelectable = canPerform
     }
 }
 

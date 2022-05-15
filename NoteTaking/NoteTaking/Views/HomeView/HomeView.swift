@@ -11,19 +11,20 @@ struct HomeView: View {
     
     @StateObject var viewModel = HomeViewModel()
     @State private var isShownPopUp = false
+    @EnvironmentObject var appViewModel: AppViewModel
     
     var body: some View {
         NavigationView {
             ZStack {
                 Color.white.ignoresSafeArea()
-                if viewModel.isLoading {
+                if appViewModel.isLoading {
                     VerticalBar(barColor: .newOrleans)
                 } else {
                     VStack {
                         headerView()
                         Spacer()
                         bodyView()
-                        if viewModel.groupNotes.isEmpty {
+                        if appViewModel.groupNotes.isEmpty {
                             Spacer()
                         }
                     }
@@ -31,7 +32,14 @@ struct HomeView: View {
                     
                     VStack {
                         HStack {
-                            NavigationLink(destination: AddNewNoteView(noteModel: nil)) {
+//                            NavigationLink(destination: AddNewNoteView(noteModel: nil, addNoteType: .withAllGroup(groupsModel: appViewModel.groupNotes))
+//                            ) {
+//                                Image("plus")
+//                                    .resizable()
+//                                    .frame(width: 70, height: 70, alignment: .center)
+//                                    .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
+//                            }
+                            NavigationLink(destination: AddNewNoteView(viewModel: appViewModel)) {
                                 Image("plus")
                                     .resizable()
                                     .frame(width: 70, height: 70, alignment: .center)
@@ -45,6 +53,7 @@ struct HomeView: View {
                     .frame(maxHeight: .infinity, alignment: .bottom)
                 }
             }
+            .environmentObject(appViewModel)
             .navigationBarHidden(true)
             .popUp(isPresented: isShownPopUp, alignment: .center) {
                 Color.green.frame(width: 100, height: 100, alignment: .center)
@@ -52,7 +61,8 @@ struct HomeView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
-            viewModel.fetchGroupNote()
+//            viewModel.fetchGroupNote()
+            appViewModel.fetchGroupNote()
         }
     }
     
@@ -99,7 +109,7 @@ struct HomeView: View {
     @ViewBuilder
     func listNotes() -> some View {
         ScrollView {
-            ForEach(viewModel.groupNotes) { note in
+            ForEach(appViewModel.groupNotes) { note in
                 NavigationLink(destination: ListNoteView(viewModel: ListNoteViewModel(groupNoteModel: note))) {
                     GroupNoteView(groupNote: note)
                 }
@@ -112,7 +122,7 @@ struct HomeView: View {
     
     @ViewBuilder
     func bodyView() -> some View {
-        if !viewModel.groupNotes.isEmpty {
+        if !appViewModel.groupNotes.isEmpty {
             listNotes()
         } else {
             emptyMessageView()

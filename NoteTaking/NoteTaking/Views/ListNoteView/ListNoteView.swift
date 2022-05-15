@@ -10,6 +10,7 @@ import SwiftUI
 struct ListNoteView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var appViewModel: AppViewModel
     @ObservedObject var viewModel: ListNoteViewModel
     
     var body: some View {
@@ -56,22 +57,34 @@ struct ListNoteView: View {
     
     @ViewBuilder
     func listNotes() -> some View {
-        ScrollView {
-            ForEach(viewModel.listNotesModel?.notes ?? []) { note in
-                NavigationLink(destination: AddNewNoteView(noteModel: note)) {
-                    NoteView(noteModel: note)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.whiteLilac.opacity(0.7))
-                        )
-                }
-                .buttonStyle(PlainButtonStyle())
-                .onTapGesture {
-                    print(note)
+        if let groupNoteModel = viewModel.listNotesModel {
+            ScrollView {
+                ForEach(groupNoteModel.notes) { note in
+//                    NavigationLink(destination: AddNewNoteView(noteModel: note, addNoteType: .withGroup(groupModel: groupNoteModel))) {
+//                        NoteView(noteModel: note)
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .foregroundColor(.whiteLilac.opacity(0.7))
+//                            )
+//                    }
+                    NavigationLink(destination: AddNewNoteView(viewModel: appViewModel), label: {
+                        NoteView(noteModel: note)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(.whiteLilac.opacity(0.7))
+                            )
+                    })
+                    .simultaneousGesture(TapGesture().onEnded({ _ in
+                        print(note)
+                        appViewModel.setSelectedNote(note)
+                    }))
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
+            .padding(.horizontal)
+        } else {
+            EmptyView()
         }
-        .padding(.horizontal)
     }
 }
 

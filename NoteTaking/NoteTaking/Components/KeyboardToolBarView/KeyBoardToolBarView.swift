@@ -47,6 +47,7 @@ final class KeyboardResponder: ObservableObject {
 struct KeyboardView<Content, ToolBar> : View where Content : View, ToolBar: View {
     @StateObject private var keyboard: KeyboardResponder = KeyboardResponder()
     let toolbarFrame: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 40.0)
+    @Binding var isShowToolBar: Bool
     var content: () -> Content
     var toolBar: () -> ToolBar
     
@@ -59,6 +60,7 @@ struct KeyboardView<Content, ToolBar> : View where Content : View, ToolBar: View
                  toolBar()
                     .frame(width: toolbarFrame.width, height: toolbarFrame.height)
                     .background(Color.whiteLilac)
+                    .hidden(!isShowToolBar)
             }
             .opacity((keyboard.currentHeight == 0) ? 0 : 1)
             .animation(.easeOut)
