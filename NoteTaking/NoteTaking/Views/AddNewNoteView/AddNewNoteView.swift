@@ -11,16 +11,10 @@ struct AddNewNoteView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-//    @StateObject private var viewModel: AddNewNoteViewModel
     @ObservedObject var viewModel: AppViewModel
     @State private var didStartEditing = false
     @State private var isOpenPhoto = false
     @State private var isShowToolBar = false
-    
-//    init(noteModel: NoteModel?, addNoteType: AddNoteType) {
-//        _viewModel = .init(wrappedValue: AddNewNoteViewModel(noteModel: noteModel, addNoteType: addNoteType))
-//        viewModel.setSelectedNote(noteModel)
-//    }
     
     
     var body: some View {
@@ -31,9 +25,7 @@ struct AddNewNoteView: View {
                     headerView()
                     titleInputView()
                         .onTapGesture {
-                            withAnimation {
-                                isShowToolBar = false
-                            }
+                            withAnimation { isShowToolBar = false }
                         }
                     
                     descInputView()
@@ -47,7 +39,9 @@ struct AddNewNoteView: View {
             } toolBar: {
                 HStack {
                     Button {
-                        isOpenPhoto.toggle()
+                        withAnimation {
+                            isOpenPhoto.toggle()
+                        }
                     } label: {
                         Image("image")
                             .resizable()
@@ -72,7 +66,9 @@ struct AddNewNoteView: View {
         }
         .sheet(isPresented: $isOpenPhoto, content: {
             ImagePicker(sourceType: .photoLibrary) { image in
-                viewModel.addingImage(image)
+                withAnimation {
+                    viewModel.addingImage(image)
+                }
             }
         })
         .navigationBarHidden(true)
@@ -153,9 +149,7 @@ struct AddNewNoteView: View {
                       textAttributed: $viewModel.selectedNote.noteDetailAttributed)
         .onTapGesture {
             didStartEditing = true
-            withAnimation {
-                isShowToolBar = true
-            }
+            withAnimation { isShowToolBar = true }
         }
         .onAppear {
             if !viewModel.selectedNote.noteDetail.isEmpty {
