@@ -120,6 +120,7 @@ struct AddNewNoteView: View {
                                 .foregroundColor(.periwinkleGray)
                         )
                 }
+                .disabled(viewModel.selectedNote.title.isEmpty)
             }
             
         }.padding(.horizontal)
@@ -129,6 +130,7 @@ struct AddNewNoteView: View {
     func titleInputView() -> some View {
         TextField("", text: $viewModel.selectedNote.title)
             .font(.system(size: 28).bold())
+            .keyboardType(.alphabet)
             .disableAutocorrection(true)
             .placeholder(when: viewModel.selectedNote.title.isEmpty, placeholder: {
                 Text("Title")
