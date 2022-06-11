@@ -36,6 +36,7 @@
 		0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */; };
 		0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */; };
 		0EA6EDDE28014B7C001C9676 /* VerticalIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */; };
+		0ED5168828545112008B41C5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5168728545112008B41C5 /* RoundedCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		0EA6EDD6280131C9001C9676 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteViewModel.swift; sourceTree = "<group>"; };
 		0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalIndicatorView.swift; sourceTree = "<group>"; };
+		0ED5168728545112008B41C5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				0E62F4C627EECEC8009EC224 /* Colors.swift */,
 				0E62F4C827EED0ED009EC224 /* Extensions */,
+				0ED5168728545112008B41C5 /* RoundedCorner.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				0E1FE16B28266232008CAAE5 /* UIScreenExtensions.swift in Sources */,
 				0E1FE16D28277A0C008CAAE5 /* UINavigationExtensions.swift in Sources */,
 				0E38F22028028788004C4F5B /* NoteView.swift in Sources */,
+				0ED5168828545112008B41C5 /* RoundedCorner.swift in Sources */,
 				0E38F21A280282AD004C4F5B /* ListNoteView.swift in Sources */,
 				0E62F4CA27EED0FB009EC224 /* ColorExtension.swift in Sources */,
 				0EA6EDD7280131C9001C9676 /* ViewExtensions.swift in Sources */,

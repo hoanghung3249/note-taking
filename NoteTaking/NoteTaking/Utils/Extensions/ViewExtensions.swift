@@ -32,4 +32,8 @@ extension View {
                         @ViewBuilder content: () -> T) -> some View {
         modifier(NoteAppPopUpView(isPresented: isPresented, alignment: alignment, content: content))
     }
+    
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
 }

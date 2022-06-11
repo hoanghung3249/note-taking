@@ -21,6 +21,7 @@ struct TextInputView: UIViewRepresentable {
     @Binding var text: String
     @Binding var didStartEditing: Bool
     @Binding var textAttributed: NSAttributedString
+    @Binding var fontSize: Double
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -28,7 +29,7 @@ struct TextInputView: UIViewRepresentable {
 //            textView.text = text
             textView.attributedText = textAttributed
             textView.textColor = UIColor(textColor)
-            textView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+            textView.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         } else {
             textView.text = placeHolderText
             textView.textColor = UIColor(placeHolderColor)
@@ -51,7 +52,7 @@ struct TextInputView: UIViewRepresentable {
         if didStartEditing {
             uiView.attributedText = self.textAttributed
             uiView.textColor = UIColor(textColor)
-            uiView.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+            uiView.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         } else {
             uiView.text = placeHolderText
             uiView.textColor = UIColor(placeHolderColor)
@@ -95,39 +96,6 @@ extension TextInputView {
         func textViewDidChange(_ textView: UITextView) {
             self.parent.textAttributed = textView.attributedText
         }
-        
-//        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-            
-//            let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-//            let attributedString = NSAttributedString(string: text)
-//            let mutableString = NSMutableAttributedString(attributedString: textAttributed.wrappedValue)
-//            mutableString.append(attributedString)
-            
-//            print(mutableString)
-//            
-//            self.textAttributed.wrappedValue = mutableString
-//            let cursor = NSRange(location: textView.selectedRange.location + 1, length: 0)
-//            textView.selectedRange = cursor
-//            if mutableString.containsAttachments(in: range) {
-//                textView.textStorage.insert(attributedString, at: range.location)
-//                let cursor = NSRange(location: textView.selectedRange.location + 1, length: 0)
-//                textView.selectedRange = cursor
-//            } else {
-//                textView.attributedText = mutableString
-//            }
-//            return true
-//            if text.count > 0 {
-//                let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-//                textView.text = newText
-//                return true
-//            } else {
-//                let attributedString = NSMutableAttributedString(string: text)
-//                textView.textStorage.insert(attributedString, at: range.location)
-//                let cursor = NSRange(location: textView.selectedRange.location + 1, length: 0)
-//                textView.selectedRange = cursor
-//            }
-//            return true
-//        }
     }
     
 }

@@ -15,7 +15,8 @@ struct AddNewNoteView: View {
     @State private var didStartEditing = false
     @State private var isOpenPhoto = false
     @State private var isShowToolBar = false
-    
+    @State private var sliderValue: Double = 20
+    @State private var isShowSlider = false
     
     var body: some View {
         ZStack {
@@ -37,29 +38,12 @@ struct AddNewNoteView: View {
                     }
                 }
             } toolBar: {
-                HStack {
-                    Button {
-                        withAnimation {
-                            isOpenPhoto.toggle()
-                        }
-                    } label: {
-                        Image("image")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
+                VStack {
+                    if isShowSlider {
+                        fontSizeSliderToolBarView()
+                    } else {
+                        mainToolBarView()
                     }
-
-                    Button {
-                        print("Adjust font size")
-                    } label: {
-                        Image("font-size-icon")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 25, height: 25)
-                    }
-                    
-                    Spacer()
-                    Text("Done")
                 }
                 .padding()
             }
@@ -73,6 +57,9 @@ struct AddNewNoteView: View {
         })
         .navigationBarHidden(true)
     }
+}
+
+private extension AddNewNoteView {
     
     @ViewBuilder
     func headerView() -> some View {
@@ -117,7 +104,9 @@ struct AddNewNoteView: View {
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 13)
-                                .foregroundColor(.periwinkleGray)
+                                .foregroundColor(
+                                    viewModel.selectedNote.title.isEmpty ? Color.periwinkleGray.opacity(0.2) : Color.periwinkleGray
+                                )
                         )
                 }
                 .disabled(viewModel.selectedNote.title.isEmpty)
@@ -148,7 +137,8 @@ struct AddNewNoteView: View {
                       maximumNumberOfLines: 0,
                       text: $viewModel.selectedNote.noteDetail,
                       didStartEditing: $didStartEditing,
-                      textAttributed: $viewModel.selectedNote.noteDetailAttributed)
+                      textAttributed: $viewModel.selectedNote.noteDetailAttributed,
+                      fontSize: $sliderValue)
         .onTapGesture {
             didStartEditing = true
             withAnimation { isShowToolBar = true }
@@ -160,6 +150,54 @@ struct AddNewNoteView: View {
         }
         .padding()
     }
+    
+    @ViewBuilder
+    func mainToolBarView() -> some View {
+        HStack {
+            Button {
+                withAnimation { isOpenPhoto.toggle() }
+            } label: {
+                Image("image")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)
+            }
+
+            Button {
+                withAnimation { isShowSlider.toggle() }
+            } label: {
+                Image("font-size-icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)
+            }
+            
+            Spacer()
+            Text("Done")
+                .foregroundColor(.wistfulapprox)
+                .font(.system(size: 18, weight: .bold, design: .default))
+        }
+    }
+    
+    @ViewBuilder
+    func fontSizeSliderToolBarView() -> some View {
+        HStack {
+            Text("A")
+                .font(.system(size: 12))
+            Slider(value: $sliderValue, in: 10...32, step: 1)
+                .accentColor(.periwinkleGray)
+            Text("A")
+                .font(.system(size: 32))
+            Button {
+                withAnimation { isShowSlider.toggle() }
+            } label: {
+                Text("Done")
+                    .foregroundColor(.wistfulapprox)
+                    .font(.system(size: 18, weight: .bold, design: .default))
+            }
+        }
+    }
+    
 }
 
 struct AddNewNoteView_Previews: PreviewProvider {

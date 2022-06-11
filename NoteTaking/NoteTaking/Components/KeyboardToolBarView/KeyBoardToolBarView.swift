@@ -61,6 +61,7 @@ struct KeyboardView<Content, ToolBar> : View where Content : View, ToolBar: View
                     .frame(width: toolbarFrame.width, height: toolbarFrame.height)
                     .background(Color.whiteLilac)
                     .hidden(!isShowToolBar)
+                    .cornerRadius(5, corners: [.topLeft, .topRight])
             }
             .opacity((keyboard.currentHeight == 0) ? 0 : 1)
             .animation(.easeOut)
