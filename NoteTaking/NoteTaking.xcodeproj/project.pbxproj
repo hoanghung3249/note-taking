@@ -37,6 +37,7 @@
 		0EA6EDDA28013417001C9676 /* AddNewNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */; };
 		0EA6EDDE28014B7C001C9676 /* VerticalIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */; };
 		0ED5168828545112008B41C5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5168728545112008B41C5 /* RoundedCorner.swift */; };
+		0ED5168A28545B37008B41C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5168928545B37008B41C5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		0EA6EDD928013417001C9676 /* AddNewNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNoteViewModel.swift; sourceTree = "<group>"; };
 		0EA6EDDD28014B7C001C9676 /* VerticalIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalIndicatorView.swift; sourceTree = "<group>"; };
 		0ED5168728545112008B41C5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		0ED5168928545B37008B41C5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				0E62F4C627EECEC8009EC224 /* Colors.swift */,
 				0E62F4C827EED0ED009EC224 /* Extensions */,
 				0ED5168728545112008B41C5 /* RoundedCorner.swift */,
+				0ED5168928545B37008B41C5 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				0E38F22228028A84004C4F5B /* DateExtensions.swift in Sources */,
 				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
 				0E1FE16728263446008CAAE5 /* BindingExtensions.swift in Sources */,
+				0ED5168A28545B37008B41C5 /* Constants.swift in Sources */,
 				0E62F4D327EEE0D0009EC224 /* HomeViewModel.swift in Sources */,
 				0E62F4C427EECA0F009EC224 /* HomeView.swift in Sources */,
 				0E62F4D727EEE7E6009EC224 /* GroupNoteView.swift in Sources */,

@@ -184,10 +184,13 @@ private extension AddNewNoteView {
         HStack {
             Text("A")
                 .font(.system(size: 12))
+            
             Slider(value: $sliderValue, in: 10...32, step: 1)
                 .accentColor(.periwinkleGray)
+            
             Text("A")
                 .font(.system(size: 32))
+            
             Button {
                 withAnimation { isShowSlider.toggle() }
             } label: {
@@ -196,6 +199,7 @@ private extension AddNewNoteView {
                     .font(.system(size: 18, weight: .bold, design: .default))
             }
         }
+        .transition(.move(edge: .bottom))
     }
     
 }

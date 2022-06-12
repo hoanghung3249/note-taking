@@ -56,6 +56,7 @@ struct TextInputView: UIViewRepresentable {
         } else {
             uiView.text = placeHolderText
             uiView.textColor = UIColor(placeHolderColor)
+            uiView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
         }
     }
     
@@ -90,6 +91,7 @@ extension TextInputView {
                 textView.text = parent.placeHolderText
                 textView.textColor = UIColor(parent.placeHolderColor)
                 textView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+                self.parent.didStartEditing = false
             }
         }
         
