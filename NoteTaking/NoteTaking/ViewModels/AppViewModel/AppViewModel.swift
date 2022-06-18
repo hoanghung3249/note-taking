@@ -47,7 +47,7 @@ final class AppViewModel: ObservableObject {
     
     func noteDateDetail() -> String {
         guard let date = selectedNote.dateAdded else { return "" }
-        let string = "\(date.toString(format: "MMM dd, yyyy")) at \(date.toString(format: "HH:mm"))"
+        let string = "\(date.toString(format: Constants.DateTimeFormat.MMMddyyyy)) at \(date.toString(format: Constants.DateTimeFormat.HHmm))"
         return string
     }
     

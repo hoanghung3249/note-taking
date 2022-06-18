@@ -13,4 +13,11 @@ struct Constants {
         static let fontSizeKey = "fontSizeKey"
     }
     
+    struct DateTimeFormat {
+        
+        static let MMMddyyyy = "MMM dd, yyyy"
+        static let HHmm = "HH:mm"
+        
+    }
+    
 }
