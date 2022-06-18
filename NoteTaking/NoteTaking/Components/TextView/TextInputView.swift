@@ -22,6 +22,7 @@ struct TextInputView: UIViewRepresentable {
     @Binding var didStartEditing: Bool
     @Binding var textAttributed: NSAttributedString
     @Binding var fontSize: Double
+    @State private var resetView = false
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
@@ -49,7 +50,7 @@ struct TextInputView: UIViewRepresentable {
     
     func updateUIView(_ uiView: UITextView, context: Context) {
         canPerformActionOn(uiView, canPerform: true)
-        if didStartEditing {
+        if didStartEditing && resetView == false {
             uiView.attributedText = self.textAttributed
             uiView.textColor = UIColor(textColor)
             uiView.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
@@ -83,6 +84,7 @@ extension TextInputView {
             if textView.text == parent.placeHolderText {
                 textView.text = ""
                 textView.textColor = UIColor(parent.textColor)
+                self.parent.resetView = false
             }
         }
         
@@ -91,7 +93,7 @@ extension TextInputView {
                 textView.text = parent.placeHolderText
                 textView.textColor = UIColor(parent.placeHolderColor)
                 textView.font = UIFont.systemFont(ofSize: 34, weight: .bold)
-                self.parent.didStartEditing = false
+                self.parent.resetView = true
             }
         }
         

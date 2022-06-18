@@ -144,7 +144,7 @@ private extension AddNewNoteView {
             withAnimation { isShowToolBar = true }
         }
         .onAppear {
-            if !viewModel.selectedNote.noteDetail.isEmpty {
+            if !viewModel.selectedNote.noteDetailAttributed.string.isEmpty {
                 didStartEditing = true
             }
         }
