@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias NoteFormatDate = Constants.DateTimeFormat
+
 struct Constants {
     
     struct UserDefaultKey {
