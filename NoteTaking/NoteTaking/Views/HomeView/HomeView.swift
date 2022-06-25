@@ -32,17 +32,10 @@ struct HomeView: View {
                     
                     VStack {
                         HStack {
-//                            NavigationLink(destination: AddNewNoteView(noteModel: nil, addNoteType: .withAllGroup(groupsModel: appViewModel.groupNotes))
-//                            ) {
-//                                Image("plus")
-//                                    .resizable()
-//                                    .frame(width: 70, height: 70, alignment: .center)
-//                                    .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
-//                            }
                             NavigationLink(destination: AddNewNoteView(viewModel: appViewModel)) {
                                 Image("plus")
                                     .resizable()
-                                    .frame(width: 70, height: 70, alignment: .center)
+                                    .frame(width: 60, height: 60, alignment: .center)
                                     .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
                             }
                         }
@@ -50,6 +43,7 @@ struct HomeView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     .padding(.horizontal)
+                    .padding(.bottom)
                     .frame(maxHeight: .infinity, alignment: .bottom)
                 }
             }
@@ -61,7 +55,6 @@ struct HomeView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
-//            viewModel.fetchGroupNote()
             appViewModel.fetchGroupNote()
         }
     }
@@ -108,16 +101,21 @@ struct HomeView: View {
     
     @ViewBuilder
     func listNotes() -> some View {
-        ScrollView {
-            ForEach(appViewModel.groupNotes) { note in
-                NavigationLink(destination: ListNoteView(viewModel: ListNoteViewModel(groupNoteModel: note))) {
-                    GroupNoteView(groupNote: note)
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 10) {
+                AllNotesView()
+                Divider()
+                ForEach(appViewModel.groupNotes) { note in
+                    NavigationLink(destination: ListNoteView(viewModel: ListNoteViewModel(groupNoteModel: note))) {
+                        GroupNoteView(groupNote: note)
+                    }
+                    // Show plain button without navigationlink overlay
+                    .buttonStyle(PlainButtonStyle())
                 }
-                // Show plain button without navigationlink overlay
-                .buttonStyle(PlainButtonStyle())
             }
         }
         .padding(.horizontal)
+        .padding(.bottom)
     }
     
     @ViewBuilder
@@ -131,7 +129,11 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    @StateObject static var viewModel = AppViewModel()
     static var previews: some View {
-        HomeView()
+        Group {
+            HomeView()
+                .environmentObject(viewModel)
+        }
     }
 }

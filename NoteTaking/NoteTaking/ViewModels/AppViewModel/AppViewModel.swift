@@ -71,3 +71,14 @@ final class AppViewModel: ObservableObject {
         }
     }
 }
+
+extension AppViewModel {
+    
+    func totalOfNotes() -> Int {
+        var total = 0
+        groupNotes.forEach({ total += $0.numberOfNote })
+        
+        return total
+    }
+    
+}

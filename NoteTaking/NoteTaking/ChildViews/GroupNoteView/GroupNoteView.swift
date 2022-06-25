@@ -18,7 +18,7 @@ struct GroupNoteView: View {
                 Text(groupNote.name)
                     .font(.headline.bold())
                 
-                Text("\(groupNote.numberOfNote)" + " \(groupNote.numberOfNote > 1 ? "notes" : "note")")
+                Text("\(groupNote.numberOfNote) \(groupNote.numberOfNote.toNoteFormat())")
                     .foregroundColor(Color.gray)
                     .font(.callout.weight(.regular))
             }
@@ -40,6 +40,10 @@ struct GroupNoteView: View {
 
 struct GroupNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        GroupNoteView(groupNote: GroupNoteModel(name: "Resources",
+                                                numberOfNote: 5,
+                                                dateAdded: Date(),
+                                                groupNoteType: .folder)
+        )
     }
 }
