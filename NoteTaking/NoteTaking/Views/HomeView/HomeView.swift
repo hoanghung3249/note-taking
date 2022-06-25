@@ -91,10 +91,10 @@ struct HomeView: View {
         VStack(spacing: 10) {
             Image(uiImage: R.image.paperwork()!)
                 
-            Text("Empty list!")
+            Text(R.string.localizable.homeEmptyList())
                 .font(.largeTitle.weight(.semibold))
             
-            Text("Click the button to write something exciting!")
+            Text(R.string.localizable.homeMessageCreateNewNote())
                 .font(.callout.weight(.medium))
         }
         .padding()

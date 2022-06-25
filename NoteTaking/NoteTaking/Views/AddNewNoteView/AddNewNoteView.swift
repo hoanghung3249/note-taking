@@ -98,7 +98,7 @@ private extension AddNewNoteView {
                 Button(action: {
                     viewModel.createNewNote()
                 }) {
-                    Text("Save")
+                    Text(R.string.localizable.commonButtonSave())
                         .foregroundColor(.black.opacity(0.5))
                         .font(.system(size: 18).bold())
                         .padding()
@@ -122,7 +122,7 @@ private extension AddNewNoteView {
             .keyboardType(.alphabet)
             .disableAutocorrection(true)
             .placeholder(when: viewModel.selectedNote.title.isEmpty, placeholder: {
-                Text("Title")
+                Text(R.string.localizable.commonTextTitle())
                     .font(.system(size: 28).bold())
                     .foregroundColor(.santasGray)
             })
@@ -131,7 +131,7 @@ private extension AddNewNoteView {
     
     @ViewBuilder
     func descInputView() -> some View {
-        TextInputView(placeHolderText: "Type something...",
+        TextInputView(placeHolderText: R.string.localizable.addNewNotePlaceholderTypeSomething(),
                       placeHolderColor: .santasGray,
                       textColor: .black,
                       maximumNumberOfLines: 0,
@@ -194,7 +194,7 @@ private extension AddNewNoteView {
             Button {
                 withAnimation { isShowSlider.toggle() }
             } label: {
-                Text("Done")
+                Text(R.string.localizable.commonButtonDone())
                     .foregroundColor(.wistfulapprox)
                     .font(.system(size: 18, weight: .bold, design: .default))
             }

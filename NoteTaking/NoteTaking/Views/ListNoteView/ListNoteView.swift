@@ -31,7 +31,7 @@ struct ListNoteView: View {
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
-                Image("back")
+                Image(uiImage: R.image.back()!)
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)
             }
@@ -47,7 +47,7 @@ struct ListNoteView: View {
             Button(action: {
                 
             }) {
-                Image("dots")
+                Image(uiImage: R.image.dots()!)
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)
             }
@@ -60,13 +60,6 @@ struct ListNoteView: View {
         if let groupNoteModel = viewModel.listNotesModel {
             ScrollView {
                 ForEach(groupNoteModel.notes) { note in
-//                    NavigationLink(destination: AddNewNoteView(noteModel: note, addNoteType: .withGroup(groupModel: groupNoteModel))) {
-//                        NoteView(noteModel: note)
-//                            .background(
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .foregroundColor(.whiteLilac.opacity(0.7))
-//                            )
-//                    }
                     NavigationLink(destination: AddNewNoteView(viewModel: appViewModel), label: {
                         NoteView(noteModel: note)
                             .background(

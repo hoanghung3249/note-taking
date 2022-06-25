@@ -13,9 +13,9 @@ struct AllNotesView: View {
     
     var body: some View {
         HStack(spacing: 10) {
-            Image("main_folder")
+            Image(uiImage: R.image.main_folder()!)
             VStack(alignment: .leading, spacing: 5) {
-                Text("All Notes")
+                Text(R.string.localizable.commonTextAllNotes())
                     .font(.headline.bold())
                 
                 Text("\(viewModel.totalOfNotes()) \(viewModel.totalOfNotes().toNoteFormat())")
@@ -24,7 +24,7 @@ struct AllNotesView: View {
             }
             Spacer()
             Button(action: {}) {
-                Image("dots")
+                Image(uiImage: R.image.dots()!)
                     .resizable()
                     .frame(width: 20, height: 20, alignment: .center)
             }

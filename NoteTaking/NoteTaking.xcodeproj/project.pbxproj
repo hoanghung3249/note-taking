@@ -41,6 +41,7 @@
 		0EF393C32866AF5A00EDB181 /* AllNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF393C22866AF5A00EDB181 /* AllNotesView.swift */; };
 		0EF393C82866B61000EDB181 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF393C72866B61000EDB181 /* Int+Extension.swift */; };
 		0EF393CD2866B98700EDB181 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF393CC2866B98700EDB181 /* R.generated.swift */; };
+		0EF393D12866BC8200EDB181 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EF393D32866BC8200EDB181 /* Localizable.strings */; };
 		376EDD53E611CA3B2AF95822 /* Pods_NoteTaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AFA38A0233A1D994491D81 /* Pods_NoteTaking.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		0EF393C22866AF5A00EDB181 /* AllNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesView.swift; sourceTree = "<group>"; };
 		0EF393C72866B61000EDB181 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		0EF393CC2866B98700EDB181 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		0EF393D22866BC8200EDB181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B2B53EDAF3BCAA369B26F7B /* Pods-NoteTaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTaking.release.xcconfig"; path = "Target Support Files/Pods-NoteTaking/Pods-NoteTaking.release.xcconfig"; sourceTree = "<group>"; };
 		6E894442C7F678579BC1D35F /* Pods-NoteTaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTaking.debug.xcconfig"; path = "Target Support Files/Pods-NoteTaking/Pods-NoteTaking.debug.xcconfig"; sourceTree = "<group>"; };
 		A5AFA38A0233A1D994491D81 /* Pods_NoteTaking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteTaking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,6 +351,7 @@
 		0EF393CA2866B96200EDB181 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0EF393CE2866BC6200EDB181 /* Localizable */,
 				0EF393CB2866B97000EDB181 /* Generated */,
 				0E62F4B727EEC976009EC224 /* Assets.xcassets */,
 			);
@@ -361,6 +364,14 @@
 				0EF393CC2866B98700EDB181 /* R.generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		0EF393CE2866BC6200EDB181 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				0EF393D32866BC8200EDB181 /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		30642AEFCBCF332B349A1326 /* Pods */ = {
@@ -448,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E62F4BB27EEC976009EC224 /* Preview Assets.xcassets in Resources */,
+				0EF393D12866BC8200EDB181 /* Localizable.strings in Resources */,
 				0E62F4B827EEC976009EC224 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +567,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0EF393D32866BC8200EDB181 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EF393D22866BC8200EDB181 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0E62F4BC27EEC976009EC224 /* Debug */ = {

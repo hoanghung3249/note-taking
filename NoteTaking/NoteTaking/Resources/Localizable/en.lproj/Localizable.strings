@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  NoteTaking
+
+  Created by Hung Nguyen on 25/06/2022.
+  
+*/
+
+"home.emptyList" = "Empty list!";
+"home.message.create.newNote" = "Click the button to write something exciting!";
+
+"addNewNote.placeholder.typeSomething" = "Type something...";
+
+"common.button.save" = "Save";
+"common.button.done" = "Done";
+"common.text.allNotes" = "All Notes";
+"common.text.title" = "Title";
