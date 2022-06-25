@@ -69,7 +69,7 @@ private extension AddNewNoteView {
                 viewModel.removeSelectedNote()
                 presentationMode.wrappedValue.dismiss()
             }) {
-                Image("back")
+                Image(uiImage: R.image.back()!)
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)
             }
@@ -90,7 +90,7 @@ private extension AddNewNoteView {
                 Button(action: {
                     viewModel.editedNote()
                 }) {
-                    Image("dots")
+                    Image(uiImage: R.image.dots()!)
                         .resizable()
                         .frame(width: 30, height: 30, alignment: .center)
                 }
@@ -157,7 +157,7 @@ private extension AddNewNoteView {
             Button {
                 withAnimation { isOpenPhoto.toggle() }
             } label: {
-                Image("image")
+                Image(uiImage: R.image.image()!)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25, height: 25)
@@ -166,7 +166,7 @@ private extension AddNewNoteView {
             Button {
                 withAnimation { isShowSlider.toggle() }
             } label: {
-                Image("font-size-icon")
+                Image(uiImage: R.image.fontSizeIcon()!)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25, height: 25)

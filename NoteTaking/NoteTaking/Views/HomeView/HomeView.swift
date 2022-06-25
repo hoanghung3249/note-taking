@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Rswift
 
 struct HomeView: View {
     
@@ -33,7 +34,7 @@ struct HomeView: View {
                     VStack {
                         HStack {
                             NavigationLink(destination: AddNewNoteView(viewModel: appViewModel)) {
-                                Image("plus")
+                                Image(uiImage: R.image.plus()!)
                                     .resizable()
                                     .frame(width: 60, height: 60, alignment: .center)
                                     .shadow(color: .royalBlue, radius: 3.5, x: 0, y: 1)
@@ -63,7 +64,7 @@ struct HomeView: View {
     func headerView() -> some View {
         HStack {
             HStack {
-                Image("avatar")
+                Image(uiImage: R.image.avatar()!)
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
                     .clipShape(Circle())
@@ -76,7 +77,7 @@ struct HomeView: View {
             Button(action: {
                 isShownPopUp.toggle()
             }) {
-                Image("loupe")
+                Image(uiImage: R.image.loupe()!)
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)
                     
@@ -88,7 +89,7 @@ struct HomeView: View {
     @ViewBuilder
     func emptyMessageView() -> some View {
         VStack(spacing: 10) {
-            Image("paperwork")
+            Image(uiImage: R.image.paperwork()!)
                 
             Text("Empty list!")
                 .font(.largeTitle.weight(.semibold))

@@ -24,7 +24,7 @@ struct GroupNoteView: View {
             }
             Spacer()
             Button(action: {}) {
-                Image("dots")
+                Image(uiImage: R.image.dots()!)
                     .resizable()
                     .frame(width: 20, height: 20, alignment: .center)
             }
