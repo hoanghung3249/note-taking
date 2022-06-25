@@ -74,13 +74,24 @@ struct HomeView: View {
             }
             Spacer()
             
-            Button(action: {
-                isShownPopUp.toggle()
-            }) {
-                Image(uiImage: R.image.loupe()!)
-                    .resizable()
-                    .frame(width: 30, height: 30, alignment: .center)
-                    
+            HStack(spacing: 10) {
+                Button(action: {
+                    isShownPopUp.toggle()
+                }) {
+                    Image(uiImage: R.image.loupe()!)
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                        
+                }
+                
+                Button(action: {
+                    print("Show create new folder")
+                }) {
+                    Image(uiImage: R.image.addFolder()!)
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                        
+                }
             }
         }
         .padding(.horizontal)
