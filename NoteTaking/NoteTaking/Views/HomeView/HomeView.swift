@@ -51,7 +51,15 @@ struct HomeView: View {
             .environmentObject(appViewModel)
             .navigationBarHidden(true)
             .popUp(isPresented: isShownPopUp, alignment: .center) {
-                Color.green.frame(width: 100, height: 100, alignment: .center)
+                CreateGroupView(isShownPopUp: $isShownPopUp)
+                    .frame(width: UIScreen.screenWidth - 50,
+                           height: 250,
+                           alignment: .center)
+            }
+            .onTapGesture {
+                withAnimation {
+                    isShownPopUp = false
+                }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -85,7 +93,7 @@ struct HomeView: View {
                 }
                 
                 Button(action: {
-                    print("Show create new folder")
+                    isShownPopUp.toggle()
                 }) {
                     Image(uiImage: R.image.addFolder()!)
                         .resizable()

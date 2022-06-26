@@ -34,6 +34,9 @@ struct NoteAppPopUpView<T: View>: ViewModifier {
                     .frame(width: geometry.size.width, height: geometry.size.height, alignment: alignment)
             }
         }
+        .background(Color.black.opacity(0.5))
+        .opacity(isPresented ? 1 : 0)
+        .edgesIgnoringSafeArea(.all)
     }
     
 }

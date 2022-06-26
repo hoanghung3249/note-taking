@@ -17,6 +17,13 @@ enum GroupNoteType: String, Codable {
         case .list: return "file"
         }
     }
+    
+    var title: String {
+        switch self {
+        case .folder: return "Folder"
+        case .list: return "List"
+        }
+    }
 }
 
 struct GroupNoteModel: Codable, Identifiable {

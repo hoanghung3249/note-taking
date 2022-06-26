@@ -42,6 +42,7 @@
 		0EF393C82866B61000EDB181 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF393C72866B61000EDB181 /* Int+Extension.swift */; };
 		0EF393CD2866B98700EDB181 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF393CC2866B98700EDB181 /* R.generated.swift */; };
 		0EF393D12866BC8200EDB181 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EF393D32866BC8200EDB181 /* Localizable.strings */; };
+		0EF393D62868010800EDB181 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF393D52868010800EDB181 /* CreateGroupView.swift */; };
 		376EDD53E611CA3B2AF95822 /* Pods_NoteTaking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AFA38A0233A1D994491D81 /* Pods_NoteTaking.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		0EF393C72866B61000EDB181 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		0EF393CC2866B98700EDB181 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0EF393D22866BC8200EDB181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0EF393D52868010800EDB181 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
 		1B2B53EDAF3BCAA369B26F7B /* Pods-NoteTaking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTaking.release.xcconfig"; path = "Target Support Files/Pods-NoteTaking/Pods-NoteTaking.release.xcconfig"; sourceTree = "<group>"; };
 		6E894442C7F678579BC1D35F /* Pods-NoteTaking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTaking.debug.xcconfig"; path = "Target Support Files/Pods-NoteTaking/Pods-NoteTaking.debug.xcconfig"; sourceTree = "<group>"; };
 		A5AFA38A0233A1D994491D81 /* Pods_NoteTaking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteTaking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 		0E46559F27F013390024059C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0EF393D4286800EA00EDB181 /* CreateGroupView */,
 				0E1FE16328262635008CAAE5 /* ImagePicker */,
 				0E9C0DAC2813BF3800525410 /* NoteAppPopUpView */,
 				0E9C0DA92813B48300525410 /* KeyboardToolBarView */,
@@ -374,6 +377,14 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		0EF393D4286800EA00EDB181 /* CreateGroupView */ = {
+			isa = PBXGroup;
+			children = (
+				0EF393D52868010800EDB181 /* CreateGroupView.swift */,
+			);
+			path = CreateGroupView;
+			sourceTree = "<group>";
+		};
 		30642AEFCBCF332B349A1326 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +555,7 @@
 				0E1FE16928266113008CAAE5 /* UIImageExtensions.swift in Sources */,
 				0E38F22228028A84004C4F5B /* DateExtensions.swift in Sources */,
 				0E1FA39927EF1D6B00372F34 /* AddNewNoteView.swift in Sources */,
+				0EF393D62868010800EDB181 /* CreateGroupView.swift in Sources */,
 				0E1FE16728263446008CAAE5 /* BindingExtensions.swift in Sources */,
 				0ED5168A28545B37008B41C5 /* Constants.swift in Sources */,
 				0EF393C32866AF5A00EDB181 /* AllNotesView.swift in Sources */,

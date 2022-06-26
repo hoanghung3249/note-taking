@@ -15,3 +15,7 @@
 "common.button.done" = "Done";
 "common.text.allNotes" = "All Notes";
 "common.text.title" = "Title";
+"common.text.folderName" = "Group Name";
+"common.text.placeholder.folderName" = "Enter Group Name...";
+"common.cancel.button" = "Cancel";
+"common.create.button" = "Create";
