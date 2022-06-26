@@ -86,7 +86,7 @@ private extension CreateGroupView {
             HStack {
                 Spacer()
                 Button(action: {
-                    isShownPopUp.toggle()
+                    withAnimation { isShownPopUp.toggle() }
                 }) {
                     Text(R.string.localizable.commonCancelButton())
                         .foregroundColor(.santasGray)

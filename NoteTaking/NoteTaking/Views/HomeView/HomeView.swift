@@ -56,10 +56,9 @@ struct HomeView: View {
                            height: 250,
                            alignment: .center)
             }
+            //Gesture for popup
             .onTapGesture {
-                withAnimation {
-                    isShownPopUp = false
-                }
+                withAnimation { isShownPopUp = false }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
